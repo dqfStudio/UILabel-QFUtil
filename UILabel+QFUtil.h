@@ -36,12 +36,12 @@
  @param maxWidth 最大宽度
  @return label的size
  */
++ (CGSize)sizeThatWidth:(CGFloat)maxWidth;
 - (CGSize)sizeThatWidth:(CGFloat)maxWidth;
-
 
 /**
  使设置的格式有效
  */
-- (void)sizeThatFits;
+- (void)formatThatFits;
 
 @end
