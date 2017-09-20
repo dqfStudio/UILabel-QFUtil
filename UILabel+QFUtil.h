@@ -36,7 +36,6 @@
  @param maxWidth 最大宽度
  @return label的size
  */
-+ (CGSize)sizeThatWidth:(CGFloat)maxWidth;
 - (CGSize)sizeThatWidth:(CGFloat)maxWidth;
 
 /**

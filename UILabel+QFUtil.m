@@ -91,27 +91,12 @@
     objc_setAssociatedObject(self, @selector(middlelineColor), middlelineColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-+ (instancetype)share {
-    static UILabel *label;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        label = [UILabel new];
-    });
-    return label;
-}
-
-
 /**
  计算label宽高，必须调用
  
  @param maxWidth 最大宽度
  @return label的size
  */
-+ (CGSize)sizeThatWidth:(CGFloat)maxWidth {
-    CGSize maximumLabelSize = CGSizeMake(maxWidth, MAXFLOAT);//labelsize的最大值
-    CGSize expectSize = [[UILabel share] sizeThatFits:maximumLabelSize];
-    return expectSize;
-}
 - (CGSize)sizeThatWidth:(CGFloat)maxWidth {
     CGSize maximumLabelSize = CGSizeMake(maxWidth, MAXFLOAT);//labelsize的最大值
     CGSize expectSize = [self sizeThatFits:maximumLabelSize];
