@@ -38,4 +38,10 @@
  */
 - (CGSize)sizeThatWidth:(CGFloat)maxWidth;
 
+
+/**
+ 使设置的格式有效
+ */
+- (void)sizeThatFits;
+
 @end

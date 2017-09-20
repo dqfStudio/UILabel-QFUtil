@@ -99,6 +99,19 @@
  */
 - (CGSize)sizeThatWidth:(CGFloat)maxWidth {
     
+    [self sizeThatFits];
+    
+    CGSize maximumLabelSize = CGSizeMake(maxWidth, MAXFLOAT);//labelsize的最大值
+    CGSize expectSize = [self sizeThatFits:maximumLabelSize];
+    
+    return expectSize;
+}
+
+/**
+ 使设置的格式有效
+ */
+- (void)sizeThatFits {
+    
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:self.text];
     [attributedString addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0,self.text.length)];
     
@@ -156,11 +169,6 @@
     }
     
     self.attributedText = attributedString;
-    
-    CGSize maximumLabelSize = CGSizeMake(maxWidth, MAXFLOAT);//labelsize的最大值
-    CGSize expectSize = [self sizeThatFits:maximumLabelSize];
-    
-    return expectSize;
 }
 
 @end
