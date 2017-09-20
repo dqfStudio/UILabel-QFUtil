@@ -17,7 +17,6 @@
 }
 - (void)setCharacterSpace:(CGFloat)characterSpace {
     objc_setAssociatedObject(self, @selector(characterSpace), @(characterSpace), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
 }
 
 - (CGFloat)lineSpace {
@@ -53,7 +52,7 @@
     return objc_getAssociatedObject(self, _cmd);
 }
 - (void)setUnderlineStr:(NSString *)underlineStr {
-    objc_setAssociatedObject(self, @selector(underlineStr), underlineStr, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(underlineStr), underlineStr, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
 }
 
@@ -69,7 +68,6 @@
 }
 - (void)setUnderlineColor:(UIColor *)underlineColor {
     objc_setAssociatedObject(self, @selector(underlineColor), underlineColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
 }
 
 - (NSString *)middlelineStr {
@@ -77,7 +75,6 @@
 }
 - (void)setMiddlelineStr:(NSString *)middlelineStr {
     objc_setAssociatedObject(self, @selector(middlelineStr), middlelineStr, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
 }
 
 - (UIFont *)middlelineFont {
@@ -92,7 +89,6 @@
 }
 - (void)setMiddlelineColor:(UIColor *)middlelineColor {
     objc_setAssociatedObject(self, @selector(middlelineColor), middlelineColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
 }
 
 /**
